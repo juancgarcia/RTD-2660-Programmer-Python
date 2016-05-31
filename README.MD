@@ -8,6 +8,8 @@ This is a python port of [ghent360](https://forums.adafruit.com/viewtopic.php?f=
   - I've never touched python before this so I'm sure some things are very wrong from a style perspective
   - I used python 2.7.11
   - I may not ever update this as I've already got what I needed out of the project, which was to read out the firmware from one of my controllers and then clone it to another board with [this tool](http://tech.mattmillman.com/lcd/rovatools/) from [matt millman](http://tech.mattmillman.com/) (his rovatool, didn't support dumping firmware at the time).
+
+
 ### Notes - Reading firmware
 - Reading is painfully slow, taking upwards of 9 mins for a 512 Kb dump. The faster Adafruit GPIO method ``readList`` kept failing for me with ACK errors, so I had to fall back to reading a single byte at a time.
 - The firmware images compatible with my LCDs are 256K, but the flash is (supposedly) 512K so my test dumps yielded extra stuff. I'm not sure whether this data is relevant at all (runtime variables maybe) or what rules I need to follow for ending the read operation earlier. Just keep in mind that you might pull more info than needed and will likely have to truncate it manually. 
