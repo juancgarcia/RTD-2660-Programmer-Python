@@ -1,3 +1,4 @@
+To assist in analysing and comparing firmware dumps visually while testing the tool, I ran them through some of these scripts.
 
 ### Hex view
 ```sh
@@ -14,6 +15,7 @@ $ i=../flash-test.bin; cat $i | od -t x1 > "$i.hex_str"
 > Particularly since my tool might leave some extraneous cruft at the end of the dump, you can get a pretty good idea how closely the dump compares to an existing bin by visually comparing it in a standard diff program. Especially afternarrowing it down with...
 
 
+### Hex Headers Listing
 ```sh
 len=16
 for i in $(find ../firmware/ -type f -iname "*.bin" -print | sort); do
